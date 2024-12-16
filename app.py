@@ -5,7 +5,11 @@ from tensorflow.keras.models import load_model
 import time
 
 # Load the pre-trained model
-model = load_model('emotion_recognition_model_tf.keras')  # Update with the correct path to your model
+try:
+    model = load_model('emotion_recognition_model_tf.keras')
+    print("Model loaded successfully!")
+except Exception as e:
+    print(f"Error loading model: {e}")
 
 # Define emotion labels
 emotion_labels = ['Angry', 'Disgust', 'Fear', 'Happy', 'Sad', 'Surprise', 'Neutral']
